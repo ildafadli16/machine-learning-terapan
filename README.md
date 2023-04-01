@@ -38,40 +38,39 @@ Pada berkas yang diunduh yakni collegePlace.csv berisi 2966 baris dan 8 kolom. K
 ### Visualisasi data dan EDA
 - Pada dataset tidak ada missing value sehingga data bisa digunakan semua.
 - Pada pengecekan menggunakan boxplot, ada outlier pada parameter age. Namun, jika ditangani dengan IQR dan mengedropnya maka data akan sangat banyak berkurang serta mengakibatkan nilai pada parameter HistoryOfBacklogs hanya tersisa yang bernilai 0 saja. Jadi, pada penanganan kasus ini dibiarkan apa adanya dataset dengan tetap tidak adanya missing value(bernilai 0 atau kosong).
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/Screenshot%202023-04-01%20124442.png?raw=true)
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/boxplotage.png?raw=true)
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/boxplotcgpa.png?raw=true)
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/boxplotintern.png?raw=true)
 - melakukan univariate Analysis pada categorial features. Yaitu pada Gender dan Stream. ini untuk melihat perbandingan jumlah sampel yang ada pada tiap-tiap fiturnya. 
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/uni-categorialfeatures_gender.png?raw=true)
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/uni-categorialfeatures_strem.png?raw=true)
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/uni-gender.png?raw=true)
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/uni-stream.png?raw=true)
+![alt text](?raw=true)
 - melakukan univariate Analysis pada numerical features. Yaitu pada Age, Internships, CGPA, Hostel, HistoryOfBackLogs, dan PlaceOrNot . ini untuk melihat perbandingan jumlah sampel yang ada pada tiap-tiap fiturnya.
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/uni-numericalfeatures.png?raw=true) 
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/uni-num.png?raw=true) 
 - Melakukan Multivariate Analysis pada pada categorial features. Yaitu pada Gender dan Stream. ini untuk melihat pengaruh tiap fitur categorial terhadap fitur PlaceOrNot. Terlihat bahwa gender berpengaruh rendah karena baik Male atau Female besarnya sama. Pada Stream juga demikian memiliki pengaruh rendah karena tiap komponen besarnya hampir sama.
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/muti-categorialfeatures.png?raw=true)
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/multi-categorial.png?raw=true)
 - melakukan multivariate Analysis pada numerical features. Yaitu pada Age, Internships, CGPA, Hostel, HistoryOfBackLogs, dan PlaceOrNot . ini untuk melihat pengaruh tiap fitur categorial terhadap fitur PlaceOrNot. Fokus pada baris PlacedOrNot terletak di baris 6 (dari atas). bahwa yang paling berpengaruh adalah terlihat fitur CGPA yang mana memperlihatkan jika semakin tinggi nilai CGPA semakin banyak pula yang nilai PlacedOrNot adalah 1.
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/muti-numericalfeatures1.png?raw=true)
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/muti-numericalfeatures2.png?raw=true)
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/multi-num.png?raw=true)
+
 - Membuat correlation matrix untuk fitur numerik, terlihat bahwa korelasi antara CGPA dengan PlaceOrNot memiliki nilai 0.59 yang artinya mendekati 1 (berkorelasi positif).
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/correlation%20Matrix.png?raw=true)
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/corellation.png?raw=true)
 
 ## Data Preparation
 
 - pada tahap ini, menggunakan teknik label encoder. Diterapkan pada fitur Gender dan Stream karena keduanya merupakan categorial features. Data bertipe object tidak dapat diproses dalam machine learning, maka dari itu dalam harus diubah dalam bentuk numerik. AAda beberapa cara melakukan encoding categorical data dengan melakukan label encoding dan one hot encoding. Label encoding mengubah setiap nilai dalam kolom menjadi angka yang berurutan.
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/LabelEncoder.png?raw=true)
-
 - Melakukan pembagian dataset menjadi dengan 80% untuk data latih dan 20% untuk data uji. Pembagian dataset ini menggunakan modul train_test_split dari scikit-learn.
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/pembagian%20datatraindantest.png?raw=true)
-
 - Melakukan standardisasi data pada semua fitur data. Tahap terakhir yaitu melakukan standarisasi data. Hal ini dilakukan untuk membuat semua fitur berada dalam skala data yang sama yaitu dengan range 0-1. Strandadisasi data ini menggunakan fungsi StandardScaler.
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/standarisasi.png?raw=true)
+
 
 ## Modeling
 Setelah dilakukan pra-pemrosesan pada dataset, langkah selanjutnya adalah modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu Random Forest dan K-Nearest Neighbor karena lebih mudah diaplikasikan untuk jenis dataset ini. Algoritma dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji.
 -KNN
  Proses klasifikasi dilakukan dengan mencari titik c terdekat dari c-baru (nearest neighbor). Teknik pencarian tetangga terdekat yang umum dilakukan dengan menggunakan formula jarak euclidean. Berikut beberapa formula yang digunakan dalam algoritma knn.
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/knnpng.png?raw=true)
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/matrixknn.png?raw=true)
 
 -RF
 Pengklasifikasi random forest membuat satu set tree keputusan dari subset set pelatihan yang dipilih secara acak. Kemudian mengumpulkan suara dari tree keputusan yang berbeda untuk memutuskan kelas akhir dari objek uji.
-![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/RF.png?raw=true)
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/matrixrf.png?raw=true)
 
 ## Evaluation
 Pada proyek ini, model yang dikembangkan adalah kasus klasifikasi sehingga menggunakan metriks akurasi, f1-score, recall dan precision. Hasil pengukuran model yang mana hasilnya akurasi RF lebih besar daripada KNN. Pada model dengan algoritma Random Forest memiliki nilai akurasi, f1-score, recall dan precision lebih tinggi dibanding dengan algoritma K-Nearest Neighbor, yaitu pada RF mendapat accuracy 0.878788 sedangan KNN mendapatkan accuracy  0.875421. Untuk membuktikannya, kedua model tersebut diuji pada data uji dan divisualisasikan pada confussion matrix. Dengan hasil diatas, maka model dengan algoritma Random Forest merupakan model yang dipilih untuk digunakan.
