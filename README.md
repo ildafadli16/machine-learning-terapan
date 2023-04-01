@@ -44,12 +44,13 @@ Pada berkas yang diunduh yakni collegePlace.csv berisi 2966 baris dan 8 kolom. K
 - melakukan univariate Analysis pada categorial features. Yaitu pada Gender dan Stream. ini untuk melihat perbandingan jumlah sampel yang ada pada tiap-tiap fiturnya. 
 ![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/uni-gender.png?raw=true)
 ![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/uni-stream.png?raw=true)
-![alt text](?raw=true)
+
 - melakukan univariate Analysis pada numerical features. Yaitu pada Age, Internships, CGPA, Hostel, HistoryOfBackLogs, dan PlaceOrNot . ini untuk melihat perbandingan jumlah sampel yang ada pada tiap-tiap fiturnya.
 ![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/uni-num.png?raw=true) 
 - Melakukan Multivariate Analysis pada pada categorial features. Yaitu pada Gender dan Stream. ini untuk melihat pengaruh tiap fitur categorial terhadap fitur PlaceOrNot. Terlihat bahwa gender berpengaruh rendah karena baik Male atau Female besarnya sama. Pada Stream juga demikian memiliki pengaruh rendah karena tiap komponen besarnya hampir sama.
 ![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/multi-categorial.png?raw=true)
 - melakukan multivariate Analysis pada numerical features. Yaitu pada Age, Internships, CGPA, Hostel, HistoryOfBackLogs, dan PlaceOrNot . ini untuk melihat pengaruh tiap fitur categorial terhadap fitur PlaceOrNot. Fokus pada baris PlacedOrNot terletak di baris 6 (dari atas). bahwa yang paling berpengaruh adalah terlihat fitur CGPA yang mana memperlihatkan jika semakin tinggi nilai CGPA semakin banyak pula yang nilai PlacedOrNot adalah 1.
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/multi_cate.png?raw=true)
 ![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/multi-num.png?raw=true)
 
 - Membuat correlation matrix untuk fitur numerik, terlihat bahwa korelasi antara CGPA dengan PlaceOrNot memiliki nilai 0.59 yang artinya mendekati 1 (berkorelasi positif).
