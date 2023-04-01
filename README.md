@@ -58,11 +58,18 @@ Pada berkas yang diunduh yakni collegePlace.csv berisi 2966 baris dan 8 kolom. K
 ![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/LabelEncoder.png?raw=true)
 
 - Melakukan pembagian dataset menjadi dengan 80% untuk data latih dan 20% untuk data uji. Pembagian dataset ini menggunakan modul train_test_split dari scikit-learn.
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/pembagian%20datatraindantest.png?raw=true)
 - Melakukan standardisasi data pada semua fitur data. Tahap terakhir yaitu melakukan standarisasi data. Hal ini dilakukan untuk membuat semua fitur berada dalam skala data yang sama yaitu dengan range 0-1. Strandadisasi data ini menggunakan fungsi StandardScaler.
-
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/standarisasi.png?raw=true)
 
 ## Modeling
-Setelah dilakukan pra-pemrosesan pada dataset, langkah selanjutnya adalah modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu Random Forest dan K-Nearest Neighbor karena lebih mudah diaplikasikan untuk jenis dataset ini. Algoritma dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. 
+Setelah dilakukan pra-pemrosesan pada dataset, langkah selanjutnya adalah modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu Random Forest dan K-Nearest Neighbor karena lebih mudah diaplikasikan untuk jenis dataset ini. Algoritma dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji.
+-KNN
+ Proses klasifikasi dilakukan dengan mencari titik c terdekat dari c-baru (nearest neighbor). Teknik pencarian tetangga terdekat yang umum dilakukan dengan menggunakan formula jarak euclidean. Berikut beberapa formula yang digunakan dalam algoritma knn.
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/knnpng.png?raw=true)
+-RF
+Pengklasifikasi random forest membuat satu set tree keputusan dari subset set pelatihan yang dipilih secara acak. Kemudian mengumpulkan suara dari tree keputusan yang berbeda untuk memutuskan kelas akhir dari objek uji.
+![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/RF.png?raw=true)
 
 ## Evaluation
 Pada proyek ini, model yang dikembangkan adalah kasus klasifikasi sehingga menggunakan metriks akurasi, f1-score, recall dan precision. Hasil pengukuran model yang mana hasilnya akurasi RF lebih besar daripada KNN. Pada model dengan algoritma Random Forest memiliki nilai akurasi, f1-score, recall dan precision lebih tinggi dibanding dengan algoritma K-Nearest Neighbor, yaitu pada RF mendapat accuracy 0.878788 sedangan KNN mendapatkan accuracy  0.875421. Untuk membuktikannya, kedua model tersebut diuji pada data uji dan divisualisasikan pada confussion matrix. Dengan hasil diatas, maka model dengan algoritma Random Forest merupakan model yang dipilih untuk digunakan.
