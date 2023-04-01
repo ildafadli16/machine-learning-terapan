@@ -1,83 +1,47 @@
-# Laporan Proyek Machine Learning - Nama Anda
+# Laporan Proyek Machine Learning - Achmad Fadli
 
 ## Domain Proyek
-
-Pada bagian ini, kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-  
-  Format Referensi: [Judul Referensi](https://scholar.google.com/) 
+Domain proyek yang dipilih dalam proyek machine learning ini adalah mengenai Pendidikan dengan judul proyek "Prediksi Penempatan". Setelah lulus, mahasiswa tentunya akan terjun ke dunia kerja. Pihak Kampus memiliki tanggung jawab untuk menjamin bahwa lulusan kampusnya memiliki kemampuan yang unggul dilihat dari tingkat daya serap di dunia kerja. Dengan membuat model Machine Learning untuk prediksi keberhasilan ditempatkan atau tidak seorang mahasiswa, bertujuan agar pihak kampus dapat melihat faktor apa yang paling berpengaruh terhadap keberhasilan ditempatkan atau tidaknya sehingga pihal kampus tepat sasaran saat evaluasi dalam upaya peningkatan kompetensi dan mutu. Hasil lain dari proyek ini yaitu sebagai bahan untuk promosi dalam hal pencarian mahasiswa baru, akreditasi, dan lain-lain.
 
 ## Business Understanding
 
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
+Berdasarkan latar belakang yang ada, maka :
 
 ### Problem Statements
 
-Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+- Bagaimana cara melakukan pra-pemrosesan pada data kriteria yang akan digunakan untuk perancangan model yang memiliki akurasi tinggi?
+- Dari serangkaian kriteria/faktor/fitur yang ada, fitur apa yang berpengaruh terhadap berhasilnya mahasiswa ditempatkan atau tidak?
+- Model apa yang memiliki tingkat akurasi tinggi untuk digunakan pada proyek ini?
 
 ### Goals
 
-Menjelaskan tujuan dari pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
+- Melakukan pra-pemrosesan dengan baik agar dapat digunakan dalam pembuatan model.
+- Mengetahui fitur yang paling berkorelasi dengan ditempatkan atau tidak. Hal ini bermanfaat untuk pihak kampus dapat mengambil langkah-langkah yang tepat dalam pengembangan kompetensi lebih lanjut sehingga tepat sasaran dan efisiensi.
+- Membuat model machine learning yang dapat memprediksi ditempatkan atau tidak seakurat mungkin berdasarkan fitur-fitur yang ada. 
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
-
-    ### Solution statements
-    - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-    - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
 
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
+Dataset berasal dari Kaggle. merupakan dataset Sebuah Universitas Mengumumkan Catatan Penempatan Di Kampus Untuk Jurusan Teknik. Datanya dari tahun 2013 dan 2014. Dikumpulkan Selama 2 tahun. data ini untuk memprediksi dan menganalisis apakah seorang siswa akan ditempatkan, berdasarkan latar belakangnya. Dataset : https://www.kaggle.com/datasets/tejashvi14/engineering-placements-prediction 
 
-### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
+Pada berkas yang diunduh yakni collegePlace.csv berisi 2966 baris dan 8 kolom. Kolom-kolom tersebut terdiri dari 2 buah kolom bertipe objek dan 6 buah kolom bertipe numerik (tipe data int64). Untuk penjelasan mengenai variabel-variable pada dataset ini dapat dilihat sebagai berikut:
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+### Variabel-variabel collegePlace.csv dataset adalah sebagai berikut:
+- Age : usia mahasiswa, parameter usia ini nilainya pada rentang 19-30 tahun
+- Gender : jenis kelamin mahasiswa, ada dua nilai yaitu Male dan Female
+- Stream : asal jurusan, terdapat 5 jurusan, yaitu Computer Science, Information Technology, Electronics And Communication, Mechanical, Electrical, dan Civil
+- internships : berapa kali pengalaman magang
+- CGPA : Cumulative Grade Point Average, paramter ini semacam nilai yang dikumpulkan oleh mahasiswa
+- Hostel : asrama atau tidak, bernilai 1 jika iya, dan 0 jika tidak asrama
+- HistoryOfBacklogs : bisa dikatakan sebuah riwayat akumulasi ketidaklulusan pada suatu task. pada dataset ini ada 2 nilai, 0(artinya lulus semua) dan 1 (ada 1 atau lebih tidak lulus). 
+- PlacedOrNot : Ditempatkan atau tidak. Parameter ini adalah parameter tujuan. nilainya 0 dan 1.
+
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
-
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
-
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
 
 **---Ini adalah bagian akhir laporan---**
 
