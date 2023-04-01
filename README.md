@@ -39,9 +39,19 @@ Pada berkas yang diunduh yakni collegePlace.csv berisi 2966 baris dan 8 kolom. K
 
 ## Data Preparation
 
+- Pada dataset tidak ada missing value sehingga data bisa digunakan semua.
+- Pada pengecekan menggunakan boxplot, ada outlier pada parameter age. Namun, jika ditangani dengan IQR dan mengedropnya maka data akan sangat banyak berkurang serta mengakibatkan nilai pada parameter HistoryOfBacklogs hanya tersisa yang bernilai 0 saja. Jadi, pada penanganan kasus ini dibiarkan apa adanya dataset dengan tetap tidak adanya missing value(bernilai 0 atau kosong).
+- pada tahap ini, menggunakan teknik label encoder. Diterapkan pada fitur Gender dan Stream karena keduanya merupakan categorial features. Data bertipe object tidak dapat diproses dalam machine learning, maka dari itu dalam harus diubah dalam bentuk numerik. AAda beberapa cara melakukan encoding categorical data dengan melakukan label encoding dan one hot encoding. Label encoding mengubah setiap nilai dalam kolom menjadi angka yang berurutan.
+- Melakukan pembagian dataset menjadi dengan 80% untuk data latih dan 20% untuk data uji. Pembagian dataset ini menggunakan modul train_test_split dari scikit-learn.
+- Melakukan standardisasi data pada semua fitur data. Tahap terakhir yaitu melakukan standarisasi data. Hal ini dilakukan untuk membuat semua fitur berada dalam skala data yang sama yaitu dengan range 0-1. Strandadisasi data ini menggunakan fungsi StandardScaler.
+
+
 ## Modeling
+Setelah dilakukan pra-pemrosesan pada dataset, langkah selanjutnya adalah modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu Random Forest dan K-Nearest Neighbor karena lebih mudah diaplikasikan untuk jenis dataset ini. Algoritma dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. 
 
 ## Evaluation
+Pada proyek ini, model yang dikembangkan adalah kasus klasifikasi sehingga menggunakan metriks akurasi, f1-score, recall dan precision. Hasil pengukuran model yang mana hasilnya akurasi RF lebih besar daripada KNN. Pada model dengan algoritma Random Forest memiliki nilai akurasi, f1-score, recall dan precision lebih tinggi dibanding dengan algoritma K-Nearest Neighbor, yaitu pada RF mendapat accuracy 0.878788 sedangan KNN mendapatkan accuracy  0.875421. Untuk membuktikannya, kedua model tersebut diuji pada data uji dan divisualisasikan pada confussion matrix. Dengan hasil diatas, maka model dengan algoritma Random Forest merupakan model yang dipilih untuk digunakan.
+
 
 **---Ini adalah bagian akhir laporan---**
 
