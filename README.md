@@ -59,6 +59,7 @@ Pada berkas yang diunduh yakni collegePlace.csv berisi 2966 baris dan 8 kolom. K
 
 - Melakukan pembagian dataset menjadi dengan 80% untuk data latih dan 20% untuk data uji. Pembagian dataset ini menggunakan modul train_test_split dari scikit-learn.
 ![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/pembagian%20datatraindantest.png?raw=true)
+
 - Melakukan standardisasi data pada semua fitur data. Tahap terakhir yaitu melakukan standarisasi data. Hal ini dilakukan untuk membuat semua fitur berada dalam skala data yang sama yaitu dengan range 0-1. Strandadisasi data ini menggunakan fungsi StandardScaler.
 ![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/standarisasi.png?raw=true)
 
@@ -67,6 +68,7 @@ Setelah dilakukan pra-pemrosesan pada dataset, langkah selanjutnya adalah modeli
 -KNN
  Proses klasifikasi dilakukan dengan mencari titik c terdekat dari c-baru (nearest neighbor). Teknik pencarian tetangga terdekat yang umum dilakukan dengan menggunakan formula jarak euclidean. Berikut beberapa formula yang digunakan dalam algoritma knn.
 ![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/knnpng.png?raw=true)
+
 -RF
 Pengklasifikasi random forest membuat satu set tree keputusan dari subset set pelatihan yang dipilih secara acak. Kemudian mengumpulkan suara dari tree keputusan yang berbeda untuk memutuskan kelas akhir dari objek uji.
 ![alt text](https://github.com/ildafadli16/machine-learning-terapan/blob/main/RF.png?raw=true)
